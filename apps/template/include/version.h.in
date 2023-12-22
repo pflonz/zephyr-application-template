@@ -1,0 +1,62 @@
+/**
+ * @file version.h
+ * @brief Software version information header
+ * @author Sebastian Zeuch (sebastian.zeuch@icloud.com)
+ * @copyright (c)2023 Sebastian Zeuch
+ */
+/******************************************************************************/
+#pragma once
+/******************************************************************************/
+/* Includes                                                                   */
+/******************************************************************************/
+
+/******************************************************************************/
+/* Preprocessor Constants                                                     */
+/******************************************************************************/
+
+/* clang-format off */
+/** Application major version. */
+#define APP_VERSION_MAJOR (@PROJECT_VERSION_MAJOR@)
+
+/** Application minor version. */
+#define APP_VERSION_MINOR (@PROJECT_VERSION_MINOR@)
+
+/** Application patch version. */
+#define APP_VERSION_PATCH (@PROJECT_VERSION_PATCH@)
+
+/** Application version. */
+#define APP_VERSION ((APP_VERSION_MAJOR << 16) + (APP_VERSION_MINOR << 8) + APP_VERSION_PATCH)
+
+/** Application version (string). */
+#define APP_VERSION_STR "@PROJECT_VERSION@"
+
+/** Application name. */
+#define APP_NAME_STR "@PROJECT_NAME@"
+/* clang-format on */
+
+/******************************************************************************/
+/* Configuration Constants                                                    */
+/******************************************************************************/
+
+/******************************************************************************/
+/* Macros                                                                     */
+/******************************************************************************/
+
+/******************************************************************************/
+/* Typedefs                                                                   */
+/******************************************************************************/
+
+/******************************************************************************/
+/* Variables                                                                  */
+/******************************************************************************/
+
+/******************************************************************************/
+/* Public Function Prototypes                                                 */
+/******************************************************************************/
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+}
+#endif

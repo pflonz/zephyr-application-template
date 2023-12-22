@@ -1,0 +1,23 @@
+{
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80
+    ],
+    "C_Cpp.formatting": "clangFormat",
+    "sonarlint.disableTelemetry": true,
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "search.useIgnoreFiles": false,
+    "git-graph.repository.fetchAndPrune": true,
+    "git-graph.repository.fetchAndPruneTags": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "pylint.args": [
+        "--rcfile=.pylint.rc"
+    ],
+    "conventionalCommits.scopes": [
+        "zephyr-build"
+    ]
+}

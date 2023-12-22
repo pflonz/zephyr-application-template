@@ -1,0 +1,32 @@
+{
+    "recommendations": [
+        // Git Extensions
+        "mhutchie.git-graph",
+        "vivaxy.vscode-conventional-commits",
+        // VSCode Editor Extensions
+        "pkief.material-icon-theme",
+        "spmeesseman.vscode-taskexplorer",
+        "rhangai.file-template",
+        "christian-kohler.path-intellisense",
+        "editorconfig.editorconfig",
+        // Development Extensions
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "cheshirekow.cmake-format",
+        "nordic-semiconductor.nrf-devicetree",
+        "nordic-semiconductor.nrf-kconfig",
+        // Debugging Extensions
+        "marus25.cortex-debug",
+        // Linter Extensions
+        "sonarsource.sonarlint-vscode",
+        // Documentation Extensions
+        "cschlosser.doxdocgen",
+        "yzhang.markdown-all-in-one",
+        "yzane.markdown-pdf",
+        "jebbs.plantuml",
+        "shd101wyy.markdown-preview-enhanced"
+    ]
+}
