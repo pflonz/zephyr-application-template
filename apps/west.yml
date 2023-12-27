@@ -18,6 +18,8 @@ manifest:
       repo-path: zephyr
       import:
         path-prefix: deps
+        name-whitelist:
+          - hal_espressif
       path: zephyr
        
 

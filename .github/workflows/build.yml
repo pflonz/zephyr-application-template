@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: zephyrprojectrtos/ci:v0.26.6
+    container: zephyrprojectrtos/ci:v0.26.6 # https://github.com/zephyrproject-rtos/docker-image
     strategy:
       matrix:
         apps: [template]
@@ -32,7 +32,7 @@ jobs:
           pip3 install -r deps/zephyr/scripts/requirements-base.txt
 
       - name: Build ${{ matrix.sample }} for ${{ matrix.target }}
-        working-directory: workdir
+        working-directory: devkit-m
         run: |
           west build -b ${{ matrix.target }} -s apps/${{ matrix.apps }} -p
           mkdir -p .out
