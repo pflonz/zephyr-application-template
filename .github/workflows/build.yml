@@ -21,15 +21,15 @@ jobs:
         working-directory: devkit-m
         id: vars
         run: |
-             echo "::set-output name=branch::${GITHUB_REF#refs/*/}"
-             echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+            echo "{branch}={GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+            echo "{sha_short}=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Initialize
         working-directory: devkit-m
         run: |
           pip3 install -U west
           west update
-          pip3 install -r ../zephyr/scripts/requirements-base.txt
+          pip3 install -r deps/zephyr/scripts/requirements-base.txt
 
       - name: Build ${{ matrix.sample }} for ${{ matrix.target }}
         working-directory: workdir
