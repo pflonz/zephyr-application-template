@@ -28,8 +28,8 @@ jobs:
         working-directory: devkit-m
         run: |
           pip3 install -U west
-          west zephyr-export
           west update
+          west zephyr-export
           pip3 install -r deps/zephyr/scripts/requirements-base.txt
 
       - name: Build ${{ matrix.sample }} for ${{ matrix.target }}
