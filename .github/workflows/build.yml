@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         apps: [template]
-        target: [esp32c3-devkitm]
+        target: [esp32c3_devkitm]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
