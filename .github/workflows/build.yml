@@ -28,7 +28,6 @@ jobs:
         working-directory: devkit-m
         run: |
           pip3 install -U west
-          west init -l .
           west update
           pip3 install -r ../zephyr/scripts/requirements-base.txt
 
