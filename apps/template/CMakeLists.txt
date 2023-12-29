@@ -43,7 +43,7 @@ set(SOURCES src/main.c)
 target_sources(app PRIVATE ${SOURCES})
 
 # Check if Doxygen is installed
-find_package(Doxygen REQUIRED dot OPTIONAL_COMPONENTS mscgen dia)
+find_package(Doxygen OPTIONAL_COMPONENTS dot OPTIONAL_COMPONENTS mscgen dia)
 
 # Set documentation inputs
 set(DOCU_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/../README.md
