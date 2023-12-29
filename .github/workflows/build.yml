@@ -8,40 +8,40 @@ jobs:
     container: zephyrprojectrtos/ci:v0.26.6 # https://github.com/zephyrproject-rtos/docker-image
     strategy:
       matrix:
-        apps: [template]
+        app: [template]
         target: [esp32c3_devkitm]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          path: devkit-m
+          path: workdir
 
       - name: Set variables
-        working-directory: devkit-m
+        working-directory: workdir
         id: vars
         run: |
             echo "{branch}={GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
             echo "{sha_short}=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Initialize
-        working-directory: devkit-m
+        working-directory: workdir
         run: |
           pip3 install -U west
           west update
           pip3 install -r deps/zephyr/scripts/requirements-base.txt
 
-      - name: Build ${{ matrix.sample }} for ${{ matrix.target }}
-        working-directory: devkit-m
+      - name: Build ${{ matrix.app }} for ${{ matrix.target }}
+        working-directory: workdir
         run: |
-          west build -b ${{ matrix.target }} -s apps/${{ matrix.apps }} -p
+          west build -b ${{ matrix.target }} -s apps/${{ matrix.app }} -p
           mkdir -p .out
-          cp build/esp-idf/build/bootloader/bootloader.bin .out/${{ matrix.apps }}_${{ matrix.target }}_bootloader.bin
-          cp build/esp-idf/build/partition_singleapp.bin .out/${{ matrix.apps }}_${{ matrix.target }}_partition_singleapp.bin
-          cp build/zephyr/zephyr.bin .out/${{ matrix.apps }}_${{ matrix.target }}_zephyr.bin
+          cp build/esp-idf/build/bootloader/bootloader.bin .out/${{ matrix.app }}_${{ matrix.target }}_bootloader.bin
+          cp build/esp-idf/build/partition_singleapp.bin .out/${{ matrix.app }}_${{ matrix.target }}_partition_singleapp.bin
+          cp build/zephyr/zephyr.bin .out/${{ matrix.app }}_${{ matrix.target }}_zephyr.bin
 
       - name: Archive firmware
         uses: actions/upload-artifact@v2
         with:
-          name: devkit-m_${{ steps.vars.outputs.branch }}_${{ steps.vars.outputs.sha_short }}
-          path: devkit-m/.out/
+          name: ${{ matrix.target }}_${{ matrix.app }}_${{ steps.vars.outputs.branch }}_${{ steps.vars.outputs.sha_short }}
+          path: workdir/.out/
