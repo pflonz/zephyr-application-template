@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     container: zephyrprojectrtos/ci:v0.26.6 # https://github.com/zephyrproject-rtos/docker-image
     strategy:
       matrix:
@@ -29,6 +29,7 @@ jobs:
         run: |
           pip3 install -U west
           west update
+          west zephyr-export
           pip3 install -r deps/zephyr/scripts/requirements-base.txt
 
       - name: Build ${{ matrix.app }} for ${{ matrix.target }}
