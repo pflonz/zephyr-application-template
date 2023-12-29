@@ -40,7 +40,7 @@ jobs:
           west build -b ${{ matrix.target }} -s apps/${{ matrix.app }} -p
           mkdir -p .out
           cp build/esp-idf/build/bootloader/bootloader.bin .out/${{ matrix.app }}_${{ matrix.target }}_bootloader.bin
-          cp build/esp-idf/build/partition_singleapp.bin .out/${{ matrix.app }}_${{ matrix.target }}_partition_singleapp.bin
+          cp build/esp-idf/build/partitions_singleapp.bin .out/${{ matrix.app }}_${{ matrix.target }}_partitions_singleapp.bin
           cp build/zephyr/zephyr.bin .out/${{ matrix.app }}_${{ matrix.target }}_zephyr.bin
 
       - name: Archive firmware
