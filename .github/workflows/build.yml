@@ -6,6 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: zephyrprojectrtos/ci:v0.26.6 # https://github.com/zephyrproject-rtos/docker-image
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
     strategy:
       matrix:
         app: [template]
