@@ -1,5 +1,7 @@
 # Zephyr RTOS Template Project
 
+![Build](https://github.com/pflonz/zephyr-application-template/actions/workflows/build.yml/badge.svg)
+
 - [Zephyr RTOS Template Project](#zephyr-rtos-template-project)
   - [About the project](#about-the-project)
   - [Setup development environment](#setup-development-environment)
