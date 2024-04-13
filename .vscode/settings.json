@@ -4,6 +4,7 @@
         80
     ],
     "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.enhancedColorization": "enabled",
     "sonarlint.disableTelemetry": true,
     "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/compile_commands.json",
     "[python]": {
