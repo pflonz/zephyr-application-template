@@ -139,3 +139,4 @@ $ west build -b <your-board> -s apps/template -t doxygen
 ## ToDo
 
 - [ ] Add unit test suite for the application
+- [ ] Automate c_cpp_properties.json update by script
