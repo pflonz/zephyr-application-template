@@ -42,6 +42,23 @@ set(SOURCES src/main.c)
 # Add the application source files.
 target_sources(app PRIVATE ${SOURCES})
 
+# Generate a git hash that's used as part of the software_version, eg
+# 1.0.0+12345678. Permit overriding at command line for CI builds.
+if (NOT DEFINED ZEPHYR_PROJECT_GIT_SHA1)
+  EXECUTE_PROCESS(
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    COMMAND git rev-parse --short HEAD
+    RESULT_VARIABLE commit_sha1
+    OUTPUT_VARIABLE ZEPHYR_PROJECT_GIT_SHA1
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    COMMAND_ERROR_IS_FATAL ANY
+  )
+endif()
+
+zephyr_compile_definitions(
+    ZEPHYR_PROJECT_GIT_SHA1=\"${ZEPHYR_PROJECT_GIT_SHA1}\"
+)
+
 # Check if Doxygen is installed
 find_package(Doxygen OPTIONAL_COMPONENTS dot OPTIONAL_COMPONENTS mscgen dia)
 

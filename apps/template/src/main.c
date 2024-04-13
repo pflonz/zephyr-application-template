@@ -39,7 +39,7 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
 int main(void)
 {
     LOG_INF("Application: %s", APP_NAME_STR);
-    LOG_INF("Version: %s", APP_VERSION_STR);
+    LOG_INF("Version: %s", APP_VERSION_STR "+" ZEPHYR_PROJECT_GIT_SHA1);
     LOG_INF("Board: %s", CONFIG_BOARD);
 
     while (true) {
