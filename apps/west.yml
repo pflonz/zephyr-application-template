@@ -10,6 +10,8 @@ manifest:
   remotes:
     - name: zephyrproject
       url-base: https://github.com/zephyrproject-rtos
+    - name: golioth
+      url-base: https://github.com/golioth
 
   projects:
     - name: zephyr
@@ -21,5 +23,10 @@ manifest:
         name-whitelist:
           - hal_espressif
       path: zephyr
+    - name: golioth
+      revision: v0.11.1
+      remote: golioth
+      repo-path: golioth-firmware-sdk
+      path: deps/modules/golioth-firmware-sdk
        
 
