@@ -19,5 +19,6 @@
     ],
     "conventionalCommits.scopes": [
         "zephyr-build"
-    ]
+    ],
+    "cmake.configureOnOpen": false
 }
