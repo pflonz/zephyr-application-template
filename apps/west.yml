@@ -13,7 +13,7 @@ manifest:
 
   projects:
     - name: zephyr
-      revision: v3.5.0
+      revision: v3.6.0
       remote: zephyrproject
       repo-path: zephyr
       import:
