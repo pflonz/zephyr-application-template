@@ -90,7 +90,7 @@
                 "__ZEPHYR_SUPERVISOR__",
                 "__ZEPHYR__=1"
             ],
-            "compilerPath": "/opt/toolchains/zephyr-sdk-0.16.5-1/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc",
+            "compilerPath": "/opt/toolchains/zephyr-sdk-0.17.0/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc",
             "cStandard": "c99",
             "cppStandard": "c++17",
             "intelliSenseMode": "${default}",

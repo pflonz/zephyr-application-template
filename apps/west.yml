@@ -15,7 +15,7 @@ manifest:
 
   projects:
     - name: zephyr
-      revision: v3.6.0
+      revision: v4.0.0
       remote: zephyrproject
       repo-path: zephyr
       import:
@@ -24,7 +24,7 @@ manifest:
           - hal_espressif
       path: zephyr
     - name: golioth
-      revision: v0.11.1
+      revision: v0.16.0
       remote: golioth
       repo-path: golioth-firmware-sdk
       path: deps/modules/golioth-firmware-sdk
